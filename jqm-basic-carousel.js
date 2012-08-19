@@ -1,7 +1,7 @@
 /*!
  * jQuery Mobile Basic Carousel
  * Source: https://github.com/Golodhros/jqm-basic-carousel.git
- * Demo: 
+ * Demo: http://jsfiddle.net/Golodhros/F5mCs/
  * Web: http://www.marcosiglesias.es
  *
  * Author: Marcos Iglesias Valle
