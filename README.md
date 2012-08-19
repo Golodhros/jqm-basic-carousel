@@ -3,7 +3,7 @@ jQuery Mobile Basic Carousel
 
 Very basic Carousel Plugin for jQuery Mobile
 
-Demo Page: http://jsfiddle.net/Golodhros/F5mCs/
+Demo Page: http://jsfiddle.net/Golodhros/PKKXp/
 
  Features:
  - Lightweight and with little dependencies (no jQuery UI library)
