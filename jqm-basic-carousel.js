@@ -108,6 +108,11 @@
 			return iMaxHeight;
 		},
 		
+		//	Returns the selected Slide Index
+		getCurrentSlideIndex: function(){
+			return methods.iSlideCounter;
+		},
+		
 		//	Resets the navigation dots on the bottom of the carousel
 		resetCounters: function(){
 			$(config.sCounterElementsQuery).each(function(item){ 
@@ -117,7 +122,7 @@
 		
 		//	Updates the navigation dots with the proper slide position
 		selectCounter: function( iElement ){
-			$(config.sCounterElementsQuery).eq( iElement ).addClass(config.sCounterOnClassName);
+			$(config.sCounterElementsQuery).eq(iElement).addClass(config.sCounterOnClassName);
 		},
 		
 		//	Depending on the animation direction we set the margin of the slide
