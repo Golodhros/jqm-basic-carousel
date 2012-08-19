@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+	<title>jQuery Mobile Basic Carousel</title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="shortcut icon" href="favicon.ico" />
+
+	<link rel="stylesheet" href="css/jquery.mobile.structure-1.1.1.min.css" />
+	<link rel="stylesheet" href="css/jquery.mobile.theme-1.1.1.min.css" />
+	<link rel="stylesheet" href="css/style.css" />
+</head> 
+<body> 
+	<!-- Demo -->
+	<div data-role="page" id="progress" data-theme="a" class="b-grade-browser">
+		<div data-role="header" data-theme="b">
+			<h1>jQuery Mobile Basic Carousel</h1>
+		</div>
+		<div id="content" class="main-content" data-iscroll data-role="content">
+			<div class="mod carousel-demo">
+				<div class="inner">
+					<div class="hd">
+						<h2>Basic Carousel</h2>
+					</div>
+					<div class="bd">
+						<div class="carousel-wrapper">
+							<div class="carousel">
+								<div id="slide-0" class="slide" >
+									<div class="slide-container clearfix">
+										<img class="wd-img" src="http://behance.vo.llnwd.net/profiles2/138316/projects/1972173/dcab96f4071fc712110d1dd4ce4491b6.jpg" />
+									</div>
+								</div>
+								<div id="slide-1" class="slide" >
+									<div class="slide-container clearfix media">
+										<div class="img sm-img">
+											<img src="http://behance.vo.llnwd.net/profiles2/138316/projects/1972173/d6d4f1a4675c8cbc94106823ea12e38c.jpg" />
+										</div>
+										<div class="body">
+											<h4>Some text here</h4>
+											<p>Plugin by <a class="link" href="http://www.marcosiglesias.es" title="Check more info about me">Marcos Iglesias</a></p>
+											<p>Ilustrations by <a class="link" href="http://www.behance.net/carogonzalez" title="Check Carolinas Work in Behance">Carolina Gonz&aacute;lez</a></p>
+										</div>
+									</div>
+								</div>
+								<div id="slide-2" class="slide" >
+									<div class="slide-container clearfix">
+										<img class="wd-img" src="http://behance.vo.llnwd.net/profiles2/138316/projects/1972173/1b79d987da96eb4e4f73de97f748d366.jpg" />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="ft">
+						<nav class="carousel-position">
+							<span class="position"><em class="on">•</em><em>•</em><em>•</em></span>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /Demo -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript">if (typeof jQuery == 'undefined') { document.write(unescape("%3Cscript src='/js/jquery-1.7.2.min.js' type='text/javascript'%3E%3C/script%3E")); }</script>
+	<script src="../jquery.easing.js"></script>
+	<script src="../jqm-basic-carousel.js"></script>
+	<script>
+		(function($){
+			$(".carousel-wrappper").carousel();
+		})(jQuery);
+	</script>
+	<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+</body>
+</html>

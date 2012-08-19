@@ -1,0 +1,39 @@
+ /* 
+ * CSS Example
+ */ 
+ .carousel-wrapper{
+		overflow: hidden;
+		width: 80%;
+		margin: 10px auto;
+		position: relative;
+	}
+		.carousel {
+			padding: 0.5em 0;
+			text-align: center;
+			margin: 0;
+			overflow: hidden;
+			width: 2000px;
+		}
+			.carousel .slide {
+				float: left;
+				display: block;
+				overflow: hidden;
+				height: 400px;		/* You will need to set this height to the max of the containers*/
+			}
+			
+	
+.carousel-demo .ft{ text-align: center;}
+	.carousel-position{width: auto; margin: 0 auto;}
+		.carousel-position em{ font-style: normal; margin: 0 0.1em;}
+				.carousel-position .on{ color: #8a662c;}
+
+/* In this specific example	*/
+	.slide-container .wd-img{width: 100%;}
+	.slide-container .sm-img{width: 50%;}
+
+/*	Media Object	*/
+.media, .body{ overflow: hidden; text-align: left;}
+.img{float: left; margin-right: 20px;}
+.img img {display: block; width: 100%;} 
+.body .link,
+.body .link:visited {color: #8a662c;}
