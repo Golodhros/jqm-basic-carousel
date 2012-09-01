@@ -13,7 +13,9 @@ Features
  - Configurable transition effect type and transition speed
 
 Configuration Instructions
-	The Default configuration options are the following
+
+	The Default configuration options are the following:
+	
 		iTransitionSpeed	:500
 		sTransitionType		:'easeOutCirc'
 		sInitEvent			:'pageshow'
@@ -22,11 +24,13 @@ Configuration Instructions
 	For example:
 		$(carouselElementSelector).carousel({iTransitionSpeed	:1500});
 
-Requirements 
+Requirements
+
 	- jQuery 1.7.2 (although maybe an older version will be OK)
 	- jquery.easing 1.3
 	
 Installation Instructions
+
  	In order to use this plugin you just need to include the above libraries and execute 
  		$(carouselElementSelector).carousel();
  		
@@ -55,6 +59,7 @@ Installation Instructions
 		</script>
 	
 Operating Instructions
+
 	Once initialized, the plugin offers several methods, like:
 		$carouselElement.carousel('swipeLeft')				=> Moves the slide to the left if possible
 		$carouselElement.carousel('swipeRight')				=> Moves the slide to the right if possible

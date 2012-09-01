@@ -75,6 +75,7 @@
 		//	We wait until the configurable event in order to get updated info about the width of the carousel
 		addEvents: function(){
 			$(document).on( config.sInitEvent, config.sPageContainer, function(){
+				console.log("on pageshow");
 				config.iNumSlides = $(config.sCarouselElementClass).find(config.sSlideClass).length;
 				methods.setSliderInfo();
 				methods.bindSwipeEvents();
@@ -82,13 +83,13 @@
 		},
 		
 		//	We obtain the width of the responsive carousel and apply it to the containers of the slide elements and its content
-		setSliderInfo: function(){
+		setSliderInfo: function( iMaxHeight ){
 			config.iSliderWidth	= $(config.sCarouselWrapperClass).width();
 			
 			$(config.sCarouselWrapperClass)
 				.find(config.sSlideClass)
 				.add(config.sContentClass)
-				.css({width: config.iSliderWidth});
+				.css({width: config.iSliderWidth, height: iMaxHeight});
 			$(config.sCarouselElementClass)
 				.css({width: config.iSliderWidth*config.iNumSlides});
 		},
@@ -99,7 +100,7 @@
 				iNumSliders	= $sliders.length,
 				iMaxHeight	= 0, 
 				i			= 0;
-			
+				
 			for(; i<iNumSliders; i++){
 				if($sliders.eq(i).height() > iMaxHeight){
 					iMaxHeight = $sliders.eq(i).height();
