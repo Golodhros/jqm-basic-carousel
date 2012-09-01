@@ -20,8 +20,8 @@
 
 /**
  * Most useful Methods:
- * $carouselElement.carousel('swipeLeft')	=> Moves the slide to the left if possible
- * $carouselElement.carousel('swipeRight')	=> Moves the slide to the right if possible
+ * $carouselElement.carousel('handleLeftSwipe')	=> Moves the slide to the left if possible
+ * $carouselElement.carousel('handleRightSwipe')	=> Moves the slide to the right if possible
  * $carouselElement.carousel('resetCarousel')	=> Resets the carousel, quite useful with orientation changes or page widht changes
  * $carouselElement.carousel('getSlidersMaxHeight')	=> Returns the maximum height of the loaded slides, useful in order to set this width programatically insted of by css as currently
  * */
@@ -57,8 +57,9 @@
 		sSlideClass				:'.slide',
 		sContentClass			:'.slide-container',
 		sSlideIdPrefix			:'#slide-', 
-		sCounterElementsQuery	:".position em",
-		sCounterOnClassName		:'on'
+		sCounterElements		:".position em",
+		sCounterOnClass			:'on',
+		isSwipeSet				:false
 	},
 	methods = {
 		iSlideCounter : 0,
@@ -75,15 +76,20 @@
 		//	We wait until the configurable event in order to get updated info about the width of the carousel
 		addEvents: function(){
 			$(document).on( config.sInitEvent, config.sPageContainer, function(){
-				console.log("on pageshow");
-				config.iNumSlides = $(config.sCarouselElementClass).find(config.sSlideClass).length;
-				methods.setSliderInfo();
+				if(!config.isSwipeSet){
+					methods.setSliderInfo();
+					methods.bindOrientationChange();
+					config.isSwipeSet = true;
+				}else{
+					methods.resetCarousel();
+				}
 				methods.bindSwipeEvents();
 			});
 		},
 		
 		//	We obtain the width of the responsive carousel and apply it to the containers of the slide elements and its content
 		setSliderInfo: function( iMaxHeight ){
+			config.iNumSlides = $(config.sCarouselElementClass).find(config.sSlideClass).length;
 			config.iSliderWidth	= $(config.sCarouselWrapperClass).width();
 			
 			$(config.sCarouselWrapperClass)
@@ -114,18 +120,6 @@
 			return methods.iSlideCounter;
 		},
 		
-		//	Resets the navigation dots on the bottom of the carousel
-		resetCounters: function(){
-			$(config.sCounterElementsQuery).each(function(item){ 
-				$(config.sCounterElementsQuery).eq(item).removeClass(config.sCounterOnClassName);
-			});
-		},
-		
-		//	Updates the navigation dots with the proper slide position
-		selectCounter: function( iElement ){
-			$(config.sCounterElementsQuery).eq(iElement).addClass(config.sCounterOnClassName);
-		},
-		
 		//	Depending on the animation direction we set the margin of the slide
 		animateSlider: function( iElement, sDirection ){
 			var margin = sDirection === 'right' ? 0 : - config.iSliderWidth;
@@ -139,24 +133,30 @@
 		bindSwipeEvents: function(){
 			if(!$(config.sCarouselElementClass)){return;}
 			$(config.sCarouselElementClass)
-				.on( "swiperight", $(config.sCarouselElementClass), $.proxy(this.swipeRight, this))
-				.on( "swipeleft", $(config.sCarouselElementClass), $.proxy(this.swipeLeft, this));
+				.on( "swiperight", $(config.sCarouselElementClass), $.proxy(this.handleRightSwipe, this))
+				.on( "swipeleft", $(config.sCarouselElementClass), $.proxy(this.handleLeftSwipe, this));
+		},
+		
+		//	When an orientation change event occurs, we need to reset the carousel in order to have the proper widths for the slides
+		bindOrientationChange: function(){
+			$(document).on('orientationchange', config.sPageContainer, function(){
+		    	methods.resetCarousel();
+			});
 		},
 		
 		//	Callback for right oriented swipe movements
-		swipeRight: function(){
+		handleRightSwipe: function(){
 			var $this = methods;
 			
 			//First checks if we are at the start of the Carousel
 			if( $this.iSlideCounter === 0 ){return;}
 			$this.iSlideCounter--;
 			$this.animateSlider( $this.iSlideCounter, "right" );
-			$this.resetCounters();
-			$this.selectCounter( $this.iSlideCounter );
+			$this.updateDotCounter( $this.iSlideCounter );
 		},
 
 		//	Callback for left oriented swipe movements
-		swipeLeft: function(){
+		handleLeftSwipe: function(){
 			var $this = methods;
 			
 			//	First checks if we are at the end of the Carousel			
@@ -164,13 +164,43 @@
 
 			$this.animateSlider( $this.iSlideCounter, "left" );
 			$this.iSlideCounter++;
-			$this.resetCounters();
-			$this.selectCounter( $this.iSlideCounter );
+			$this.updateDotCounter( $this.iSlideCounter );
+		},
+		
+		//	Updates the navigation dots with the proper slide position
+		updateDotCounter: function( iElement ){
+			this.resetDotCounter();
+			$(config.sCounterElements).eq( iElement ).addClass(config.sCounterOnClass);
+		},
+		
+		//	Resets the navigation dots on the bottom of the carousel
+		resetDotCounter: function(){
+			$(config.sCounterElements).each(function(item){ 
+				$(config.sCounterElements).eq(item).removeClass(config.sCounterOnClass);
+			});
+		},
+		
+		//	Updates the Slide Counter integer
+		updateSlideCounter: function( iPosition ){
+			this.iSlideCounter = iPosition;
 		},
 		
 		//	Resets the carousel by setting again the containers and content elements widths
 		resetCarousel: function(){
+			this.resetSlidePosition();
 			this.setSliderInfo();
+			this.updateDotCounter( 0 );
+			this.updateSlideCounter( 0 );
+		},
+		
+		//	Moves the slider to the start position
+		resetSlidePosition: function(){
+			var iCurrentSlide	= methods.iSlideCounter;
+			if( iCurrentSlide !== 0){
+				for(var i=iCurrentSlide; i>-1; i--){
+					methods.animateSlider( i, "right" );
+				}			
+			}
 		}
 	};
 	
