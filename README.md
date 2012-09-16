@@ -72,6 +72,8 @@ Copyright and Licensing Information
 Contact Information
 
 Known Bugs
+	
+	- Right now, you need to specify the maximum height of the content in the carousel throught css
 
 Credits and Acknowledgements
 	References:

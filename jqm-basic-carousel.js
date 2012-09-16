@@ -39,6 +39,11 @@
 	<nav class="carousel-position">
 		<span id="position"><em class="on">•</em><em>•</em><em>•</em></span>
 	</nav>
+	<script>
+		(function($){
+			$(".carousel-wrappper").carousel(oOptionalConfigObject);
+		})(jQuery);
+	</script>
  */
 
 
@@ -75,7 +80,6 @@
 		//	We wait until the configurable event in order to get updated info about the width of the carousel
 		addEvents: function(){
 			$(document).on( config.sInitEvent, config.sPageContainer, function(){
-				console.log("on pageshow");
 				config.iNumSlides = $(config.sCarouselElementClass).find(config.sSlideClass).length;
 				methods.setSliderInfo();
 				methods.bindSwipeEvents();
