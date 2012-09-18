@@ -22,7 +22,8 @@
  * Most useful Methods:
  * $carouselElement.carousel('swipeLeft')	=> Moves the slide to the left if possible
  * $carouselElement.carousel('swipeRight')	=> Moves the slide to the right if possible
- * $carouselElement.carousel('resetCarousel')	=> Resets the carousel, quite useful with orientation changes or page widht changes
+ * $carouselElement.carousel('getCurrentSlideIndex')	=> Returns the current slide index
+ * $carouselElement.carousel('resetCarousel')	=> Resets the carousel, moving back the current slide to the initial state
  * $carouselElement.carousel('getSlidersMaxHeight')	=> Returns the maximum height of the loaded slides, useful in order to set this width programatically insted of by css as currently
  * */
 
@@ -46,24 +47,24 @@
 	</script>
  */
 
-
-(function($) {
+;(function ( $, window, document, undefined ) {
 	"use strict";
 	var config ={
-		iNumSlides				:0,
-		iSliderWidth			:0,
 		iTransitionSpeed		:500,
 		sTransitionType			:'easeOutCirc',
-		sPageContainer			:'.ui-page',
 		sInitEvent				:'pageshow',
+		iNumSlides				:0,
+		iSliderWidth			:0,
+		sPageContainer			:'.ui-page',
 		//Internal classes TODO: to remove
 		sCarouselWrapperClass	:'.carousel-wrapper',
 		sCarouselElementClass	:'.carousel',
 		sSlideClass				:'.slide',
 		sContentClass			:'.slide-container',
 		sSlideIdPrefix			:'#slide-', 
-		sCounterElementsQuery	:".position em",
-		sCounterOnClassName		:'on'
+		sCounterElements		:".position em",
+		sCounterOnClassName		:'on',
+		isSwipeSet				:false
 	},
 	methods = {
 		iSlideCounter : 0,
@@ -72,22 +73,31 @@
 		init: function(oConfigOptions){
 			// We extend the carousel configuration with the custom options given
 			config = $.extend( config, oConfigOptions );
-			
+
 			// We add the events to the page
-			methods.addEvents();
+			methods.setCarouselInit();
 		},	
 		
 		//	We wait until the configurable event in order to get updated info about the width of the carousel
-		addEvents: function(){
-			$(document).on( config.sInitEvent, config.sPageContainer, function(){
-				config.iNumSlides = $(config.sCarouselElementClass).find(config.sSlideClass).length;
-				methods.setSliderInfo();
-				methods.bindSwipeEvents();
-			});
+		setCarouselInit: function(){
+			$(document).on( config.sInitEvent, config.sPageContainer, methods.handleCarouselInit);
+		},
+		
+		//	If it is not the first time the Carousel is loaded in the Dom we reset the Carousel
+		handleCarouselInit: function(){
+			if(!config.isSwipeSet){
+			    methods.setSliderInfo();
+				methods.bindOrientationChange();
+				config.isSwipeSet = true;
+			}else{
+				methods.resetCarousel()
+			}
+		    methods.bindSwipeEvents();
 		},
 		
 		//	We obtain the width of the responsive carousel and apply it to the containers of the slide elements and its content
 		setSliderInfo: function( iMaxHeight ){
+			config.iNumSlides = $(config.sCarouselElementClass).find(config.sSlideClass).length;
 			config.iSliderWidth	= $(config.sCarouselWrapperClass).width();
 			
 			$(config.sCarouselWrapperClass)
@@ -99,6 +109,7 @@
 		},
 		
 		//	Obtains the Max Height of the Carousel contents, in order to set the rest of them
+		//	TODO: Make this be more useful
 		getSlidersMaxHeight: function(){
 			var $sliders	= $(config.sContentClass),
 				iNumSliders	= $sliders.length,
@@ -113,21 +124,42 @@
 			return iMaxHeight;
 		},
 		
+		//	Resets the navigation dots on the bottom of the carousel
+		resetDotCounter: function(){
+			$(config.sCounterElements).each(function(item){ 
+				$(config.sCounterElements).eq(item).removeClass(config.sCounterOnClassName);
+			});
+		},
+		
+		//	Updates the navigation dots with the proper slide position
+		setDotCounter: function( iElement ){
+			methods.resetDotCounter();
+			$(config.sCounterElements).eq( iElement ).addClass(config.sCounterOnClassName);
+		},
+		
 		//	Returns the selected Slide Index
 		getCurrentSlideIndex: function(){
 			return methods.iSlideCounter;
 		},
 		
-		//	Resets the navigation dots on the bottom of the carousel
-		resetCounters: function(){
-			$(config.sCounterElementsQuery).each(function(item){ 
-				$(config.sCounterElementsQuery).eq(item).removeClass(config.sCounterOnClassName);
-			});
+		//	Updates the Slide Counter integer
+		setSlideCounter: function( iPosition ){
+			methods.iSlideCounter = iPosition;
 		},
 		
-		//	Updates the navigation dots with the proper slide position
-		selectCounter: function( iElement ){
-			$(config.sCounterElementsQuery).eq(iElement).addClass(config.sCounterOnClassName);
+		//	Setting of the callbacks for swipe events
+		bindSwipeEvents: function(){
+			if(!$(config.sCarouselElementClass)){return;}
+			$(config.sCarouselElementClass)
+				.on( "swiperight", $(config.sCarouselElementClass), $.proxy(methods.swipeRight, this))
+				.on( "swipeleft", $(config.sCarouselElementClass), $.proxy(methods.swipeLeft, this));
+		},
+		
+		//	When an orientation change event occurs, we need to reset the carousel in order to have the proper widths for the slides
+		bindOrientationChange: function(){
+			$(document).on('orientationchange', config.sPageContainer, function(){
+		    	methods.resetCarousel();
+			});
 		},
 		
 		//	Depending on the animation direction we set the margin of the slide
@@ -139,42 +171,41 @@
 				}, config.iTransitionSpeed, config.sTransitionType);
 		},
 		
-		//	Setting of the callbacks for swipe events
-		bindSwipeEvents: function(){
-			if(!$(config.sCarouselElementClass)){return;}
-			$(config.sCarouselElementClass)
-				.on( "swiperight", $(config.sCarouselElementClass), $.proxy(this.swipeRight, this))
-				.on( "swipeleft", $(config.sCarouselElementClass), $.proxy(this.swipeLeft, this));
-		},
-		
 		//	Callback for right oriented swipe movements
 		swipeRight: function(){
-			var $this = methods;
-			
 			//First checks if we are at the start of the Carousel
-			if( $this.iSlideCounter === 0 ){return;}
-			$this.iSlideCounter--;
-			$this.animateSlider( $this.iSlideCounter, "right" );
-			$this.resetCounters();
-			$this.selectCounter( $this.iSlideCounter );
+			if( methods.iSlideCounter === 0 ){return;}
+			methods.iSlideCounter--;
+			methods.animateSlider( methods.iSlideCounter, "right" );
+			methods.setDotCounter( methods.iSlideCounter );
 		},
 
 		//	Callback for left oriented swipe movements
 		swipeLeft: function(){
-			var $this = methods;
-			
 			//	First checks if we are at the end of the Carousel			
-			if( $this.iSlideCounter >= config.iNumSlides - 1 ) { return; }
+			if( methods.iSlideCounter >= config.iNumSlides - 1 ) { return; }
 
-			$this.animateSlider( $this.iSlideCounter, "left" );
-			$this.iSlideCounter++;
-			$this.resetCounters();
-			$this.selectCounter( $this.iSlideCounter );
+			methods.animateSlider( methods.iSlideCounter, "left" );
+			methods.iSlideCounter++;
+			methods.setDotCounter( methods.iSlideCounter );
 		},
 		
 		//	Resets the carousel by setting again the containers and content elements widths
 		resetCarousel: function(){
-			this.setSliderInfo();
+			methods.resetSlidePosition();
+			methods.setSliderInfo();
+			methods.setDotCounter( 0 );
+			methods.setSlideCounter( 0 );
+		},
+		
+		//	Moves the slider to the start position
+		resetSlidePosition: function(){
+			var iCurrentSlide	= methods.iSlideCounter;
+			if( iCurrentSlide !== 0){
+				for(var i=iCurrentSlide; i>-1; i--){
+					methods.animateSlider( i, "right" );
+				}			
+			}
 		}
 	};
 	
@@ -188,4 +219,4 @@
 			$.error('Method ' + method + ' does not exist on jQuery.carousel');
 		}
     };
-})(jQuery);
+})( jQuery, window, document );

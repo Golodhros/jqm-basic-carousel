@@ -32,7 +32,7 @@ Requirements
 Installation Instructions
 
  	In order to use this plugin you just need to include the above libraries and execute 
- 		$(carouselElementSelector).carousel();
+ 		$(carouselWrapperSelector).carousel();
  		
 	The required markup for a three element Carousel would be:
 		<div class="carousel-wrapper">
@@ -64,19 +64,26 @@ Operating Instructions
 		$carouselElement.carousel('swipeLeft')				=> Moves the slide to the left if possible
 		$carouselElement.carousel('swipeRight')				=> Moves the slide to the right if possible
 		$carouselElement.carousel('resetCarousel')			=> Resets the carousel, quite useful with orientation changes or page widht changes
-		$carouselElement.carousel('getSlidersMaxHeight')	=> Returns the maximum height of the loaded slides, useful in order to set this width programatically insted of by css as currently
 		$carouselElement.carousel('getCurrentSlideIndex')	=> Returns the index of the current Slide, starting from 0
+		$carouselElement.carousel('getSlidersMaxHeight')	=> Returns the maximum height of the loaded slides, useful in order to set this width programatically insted of by css as currently
 		
-Copyright and Licensing Information
-
-Contact Information
-
 Known Bugs
 	
 	- Right now, you need to specify the maximum height of the content in the carousel throught css
 
+Future Improvements
+
+	- Cleaning of unnecessary classes in the markup
+	- Make it horizontally responsive
+	- Convert the plugin structure to a widget structure
+	- Polish Up and add more tests
+
 Credits and Acknowledgements
+
 	References:
  		- http://docs.jquery.com/Plugins/Authoring
+ 		- http://coding.smashingmagazine.com/2011/10/11/essential-jquery-plugin-patterns/
  		
+Copyright and Licensing Information
+
 Changelog
