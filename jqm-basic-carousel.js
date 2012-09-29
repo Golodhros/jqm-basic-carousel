@@ -20,10 +20,10 @@
 
 /**
  * Most useful Methods:
- * $carouselElement.carousel('swipeLeft')	=> Moves the slide to the left if possible
- * $carouselElement.carousel('swipeRight')	=> Moves the slide to the right if possible
+ * $carouselElement.carousel('handleLeftSwipe')	=> Moves the slide to the left if possible
+ * $carouselElement.carousel('handleRightSwipe')	=> Moves the slide to the right if possible
+ * $carouselElement.carousel('resetCarousel')	=> Resets the carousel, quite useful with orientation changes or page widht changes
  * $carouselElement.carousel('getCurrentSlideIndex')	=> Returns the current slide index
- * $carouselElement.carousel('resetCarousel')	=> Resets the carousel, moving back the current slide to the initial state
  * $carouselElement.carousel('getSlidersMaxHeight')	=> Returns the maximum height of the loaded slides, useful in order to set this width programatically insted of by css as currently
  * */
 
@@ -184,7 +184,6 @@
 		swipeLeft: function(){
 			//	First checks if we are at the end of the Carousel			
 			if( methods.iSlideCounter >= config.iNumSlides - 1 ) { return; }
-
 			methods.animateSlider( methods.iSlideCounter, "left" );
 			methods.iSlideCounter++;
 			methods.setDotCounter( methods.iSlideCounter );
