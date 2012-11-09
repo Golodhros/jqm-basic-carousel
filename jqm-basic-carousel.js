@@ -10,6 +10,7 @@
  * - Responsive (although would require a reset in order to adapt to viewport widht changes)
  * - Just horizontal swipe events
  * - Configurable transition effect and speed
+ * - Configurable AutoPlay
  * 
  * Requirements: 
  * - jQuery 1.7.2 (although maybe a lower version will be OK)
@@ -20,8 +21,8 @@
 
 /**
  * Most useful Methods:
- * $carouselElement.carousel('handleLeftSwipe')	=> Moves the slide to the left if possible
- * $carouselElement.carousel('handleRightSwipe')	=> Moves the slide to the right if possible
+ * $carouselElement.carousel('swipeLeft')	=> Moves the slide to the left if possible
+ * $carouselElement.carousel('swipeRight')	=> Moves the slide to the right if possible
  * $carouselElement.carousel('resetCarousel')	=> Resets the carousel, quite useful with orientation changes or page widht changes
  * $carouselElement.carousel('getCurrentSlideIndex')	=> Returns the current slide index
  * $carouselElement.carousel('getSlidersMaxHeight')	=> Returns the maximum height of the loaded slides, useful in order to set this width programatically insted of by css as currently
@@ -64,6 +65,8 @@
 		sSlideIdPrefix			:'#slide-', 
 		sCounterElements		:".position em",
 		sCounterOnClassName		:'on',
+		iAutoPlayInterval		:2000,
+		isAutoPlay				:false,
 		isSwipeSet				:false
 	},
 	methods = {
@@ -93,6 +96,7 @@
 				methods.resetCarousel()
 			}
 		    methods.bindSwipeEvents();
+		    methods.setAutoPlay();
 		},
 		
 		//	We obtain the width of the responsive carousel and apply it to the containers of the slide elements and its content
@@ -106,6 +110,18 @@
 				.css({width: config.iSliderWidth, height: iMaxHeight});
 			$(config.sCarouselElementClass)
 				.css({width: config.iSliderWidth*config.iNumSlides});
+		},
+
+		setAutoPlay: function(){
+			if( config.isAutoPlay ){
+				methods.autoPlayInterval = setInterval(function() {
+					if( methods.isLastSlide() ){
+						methods.resetSlidesPosition();
+					}else{
+						methods.swipeLeft();
+					}
+				}, config.iAutoPlayInterval);
+			}
 		},
 		
 		//	Obtains the Max Height of the Carousel contents, in order to set the rest of them
@@ -188,18 +204,27 @@
 			methods.iSlideCounter++;
 			methods.setDotCounter( methods.iSlideCounter );
 		},
+
+		stopAutoPlay: function(){
+			if(methods.autoPlayInterval){
+				window.clearInterval( methods.autoPlayInterval );
+			}
+		},
 		
 		//	Resets the carousel by setting again the containers and content elements widths
 		resetCarousel: function(){
+			methods.stopAutoPlay();
 			methods.resetSlidePosition();
 			methods.setSliderInfo();
-			methods.setDotCounter( 0 );
-			methods.setSlideCounter( 0 );
 		},
 		
 		//	Moves the slider to the start position
 		resetSlidePosition: function(){
 			var iCurrentSlide	= methods.iSlideCounter;
+
+			methods.setDotCounter( 0 );
+			methods.setSlideCounter( 0 );
+
 			if( iCurrentSlide !== 0){
 				for(var i=iCurrentSlide; i>-1; i--){
 					methods.animateSlider( i, "right" );

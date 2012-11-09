@@ -33,6 +33,8 @@ $('#testing-page').live('pageinit', function(event) {
 			$('.ui-page').trigger('orientationchange');			
 			equal( $('.carousel-wrapper').carousel('getCurrentSlideIndex'), 0);	
 		});
+
+		//	TODO: Implement tests for autoplay feature
 		
 		module("Basic Carousel internal methods");
 		
