@@ -23,7 +23,7 @@
 						<h2>Basic Carousel</h2>
 					</div>
 					<div class="bd">
-						<div class="carousel-wrapper">
+						<div class="carousel-wrapper" data-role="carousel">
 							<div class="carousel">
 								<div id="slide-0" class="slide" >
 									<div class="slide-container clearfix">
@@ -63,17 +63,12 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script type="text/javascript">if (typeof jQuery == 'undefined') { document.write(unescape("%3Cscript src='js/jquery-1.7.2.min.js' type='text/javascript'%3E%3C/script%3E")); }</script>
 	<script src="../jquery.easing.js"></script>
-	<script src="../jqm-carousel.js"></script>
-		
-	<script>
-		(function($){
-		 	$(".carousel-wrappper").carousel();
-		})(jQuery);
-	</script>
 	<!--
 	TODO: for offline testing
 	<script src="js/jquery.mobile-1.1.1.min.js"></script>
 	-->
 	<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+	<!-- Set As jQuery Mobile Auto Initialized Widget -->
+	<script src="../jqm-carousel-widget.js"></script>
 </body>
 </html>

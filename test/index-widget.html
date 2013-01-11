@@ -12,14 +12,10 @@
 	<script src="http://code.jquery.com/qunit/qunit-1.10.0.js"></script>
 	
 	<script src="../jquery.easing.js"></script>
-	<script src="../jqm-carousel.js"></script>
-	<script>
-		(function($){
-			$(".carousel-wrappper").carousel();
-		})(jQuery);
-	</script>
+
 	<script src="test.js"></script>
 	<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+	<script src="../jqm-carousel-widget.js"></script>
 </head>
 <body>
 	<div id="testing-page" data-role="page" >
@@ -33,7 +29,7 @@
 			<ol id="qunit-tests"></ol>
 			<div id="qunit-fixture">
 			</div>
-			<div class="carousel-wrapper">
+			<div class="carousel-wrapper" data-role="carousel">
 				<div class="carousel" id="carousel">
 					<div id="slide-0" class="slide" ><img class="slide-container" src="http://behance.vo.llnwd.net/profiles2/138316/projects/1972173/dcab96f4071fc712110d1dd4ce4491b6.jpg" title="App Screenshot"/></div>
 					<div id="slide-1" class="slide" ><img class="slide-container" src="http://behance.vo.llnwd.net/profiles2/138316/projects/1972173/d6d4f1a4675c8cbc94106823ea12e38c.jpg" title="App Screenshot"/></div>

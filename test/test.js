@@ -31,10 +31,10 @@ $('#testing-page').live('pageinit', function(event) {
 		test( "Orientation Change Test", function() {
 			$carouselWrapperElement.carousel('swipeLeft');
 			$('.ui-page').trigger('orientationchange');			
-			equal( $('.carousel-wrapper').carousel('getCurrentSlideIndex'), 0);	
+			equal( $carouselWrapperElement.carousel('getCurrentSlideIndex'), 0);	
 		});
 
-		//	TODO: Implement tests for autoplay feature
+		//	TODO: implement tests for autoplay feature
 		
 		module("Basic Carousel internal methods");
 		

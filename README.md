@@ -1,9 +1,13 @@
-jQuery Mobile Basic Carousel
+jQuery Mobile Carousel
 ====================================
 
-Very basic Carousel Plugin for jQuery Mobile
+Simple Carousel Plugin for jQuery Mobile
 
-Demo Page: http://marcosiglesias.es/plugins/jqm-basic-carousel/demo.html
+Plugin Demo Page: 
+http://marcosiglesias.es/plugins/jqm-carousel/demo.html
+
+Widget Demo Page:
+http://marcosiglesias.es/plugins/jqm-carousel/demo-widget.html
 
 Features
  - Lightweight 
@@ -11,7 +15,7 @@ Features
  - Responsive (although would require a reset in order to adapt to viewport width changes)
  - Just for horizontal swipe events
  - Configurable transition effect type and transition speed
- - Configurable AutoPlay
+ - Configurable AutoPlay and AutoPlay Time Interval
 
 Configuration Instructions
 
@@ -70,23 +74,35 @@ Operating Instructions
 		$carouselElement.carousel('getCurrentSlideIndex')	=> Returns the index of the current Slide, starting from 0
 		$carouselElement.carousel('getSlidersMaxHeight')	=> Returns the maximum height of the loaded slides, useful in order to set this width programatically insted of by css as currently
 		
+New Widget Version (Needs Testing)
+
+Uses the same markup, but it just needs the carrousel-wrapper element to have data-role="carousel" for it to initialize automatically (with the pageshow event). Example:
+
+<div class="carousel-wrapper" data-role="carousel">
+
+The position of the widget script needs also to change, as you can see in the <a href="http://marcosiglesias.es/plugins/jqm-carousel/demo-widget.html" title="demo widget page">demo</a>.
+
 Known Bugs
 	
 	- Right now, you need to specify the maximum height of the content in the carousel throught css
 
 Future Improvements
-
+	
 	- Cleaning of unnecessary classes in the markup
 	- Make it horizontally responsive
-	- Convert the plugin structure to a widget structure
 	- Polish Up and add more tests
 
 Credits and Acknowledgements
 
 	References:
- 		- http://docs.jquery.com/Plugins/Authoring
- 		- http://coding.smashingmagazine.com/2011/10/11/essential-jquery-plugin-patterns/
+ 		- http://docs.jquery.com/Plugins/Authoring (Official jQuery Documentation)
+ 		- http://ajpiano.com/widgetfactory/#slide1 (Adam J. Sontag)
+ 		- http://coding.smashingmagazine.com/2011/10/11/essential-jquery-plugin-patterns/ (Addy Osmani)
  		
 Copyright and Licensing Information
 
 Changelog
+
+v1.0 - Initial Version
+v1.1 - Changed Plugin Design Pattern
+v1.2 - Added Widget Version

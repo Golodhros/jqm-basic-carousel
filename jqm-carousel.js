@@ -100,14 +100,14 @@
 		},
 		
 		//	We obtain the width of the responsive carousel and apply it to the containers of the slide elements and its content
-		setSliderInfo: function( iMaxHeight ){
+		setSliderInfo: function( ){
 			config.iNumSlides = $(config.sCarouselElementClass).find(config.sSlideClass).length;
 			config.iSliderWidth	= $(config.sCarouselWrapperClass).width();
-			
+	
 			$(config.sCarouselWrapperClass)
-				.find(config.sSlideClass)
+				.add(config.sSlideClass)
 				.add(config.sContentClass)
-				.css({width: config.iSliderWidth, height: iMaxHeight});
+				.css({width: config.iSliderWidth});
 			$(config.sCarouselElementClass)
 				.css({width: config.iSliderWidth*config.iNumSlides});
 		},
@@ -116,7 +116,7 @@
 			if( config.isAutoPlay ){
 				methods.autoPlayInterval = setInterval(function() {
 					if( methods.isLastSlide() ){
-						methods.resetSlidesPosition();
+						methods.resetSlidePosition();
 					}else{
 						methods.swipeLeft();
 					}
@@ -151,6 +151,10 @@
 		setDotCounter: function( iElement ){
 			methods.resetDotCounter();
 			$(config.sCounterElements).eq( iElement ).addClass(config.sCounterOnClassName);
+		},
+
+		isLastSlide: function(){
+			return (methods.iSlideCounter === config.iNumSlides - 1) ? true : false;
 		},
 		
 		//	Returns the selected Slide Index
