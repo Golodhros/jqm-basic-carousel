@@ -1,8 +1,7 @@
 /*!
- * (jQuery mobile) jQuery UI Widget-factory plugin boilerplate (for 1.8/9+)
- * Author: @scottjehl
- * Further changes: @addyosmani
- * Licensed under the MIT license
+ * jQuery Mobile Basic Carousel Widget
+ * Author: @golodhros
+ * Widget pattern application based on @addyosmani article on Smashing Magazine
  */
 
 ;(function ( $, window, document, undefined ) {
@@ -30,17 +29,10 @@
 
         _create: function() {
             // _create will automatically run the first time this 
-            // widget is called. Put the initial widget set-up code 
-            // here, then you can access the element on which 
-            // the widget was called via this.element
-            // The options defined above can be accessed via 
-            // this.options
+            // widget is called.
 
-            // The first time
             this._setSliderInfo();
             this._bindOrientationChange();
-
-            // Always
             this._bindSwipeEvents();
             this._setAutoPlay();
         },
@@ -71,6 +63,7 @@
                 .on( "swipeleft", $(this.options.sCarouselElementClass), $.proxy(this.swipeLeft, this));
         },
 
+        //  _iSlideCounter contains info about the current slide, iNumSlides is the total slide number
         _isLastSlide: function(){
             return (this._iSlideCounter === this.options.iNumSlides - 1) ? true : false;
         },
@@ -138,8 +131,7 @@
             this.options.iSliderWidth = iSliderWidth;
         },
 
-        // Public methods like these below can can be called 
-        // externally: 
+        // Public methods that can be called externally: 
         // $("#myelem").carousel( "resetCarousel", arguments );
 
         //  Returns the selected Slide Index
