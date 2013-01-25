@@ -42,6 +42,7 @@ In order to use this plugin you just need to include the above libraries and exe
  		$(carouselWrapperSelector).carousel();
  		
 The required markup for a three element Carousel would be:
+
 		<div class="carousel-wrapper">
 			<div class="carousel" id="carousel">
 				<div id="slide-0" class="slide" >
@@ -60,6 +61,7 @@ The required markup for a three element Carousel would be:
 		</nav>
 
 In this specific case, we will initialize the Carousel with:
+
 		<script>
 			(function($){
 				$(".carousel-wrappper").carousel();
