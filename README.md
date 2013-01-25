@@ -19,15 +19,15 @@
 
 ### Configuration Instructions
 
-	The Default configuration options are the following:
+The Default configuration options are the following:
 	
 		iTransitionSpeed	:500
 		iAutoPlayInterval	:2000 (2 seconds)
 		sTransitionType		:'easeOutCirc'
 		sInitEvent			:'pageshow'
 	
-	In order to change any of this parameters, you will need just to pass an object with the new value as a reference in the initialization. 
-	For example:
+In order to change any of this parameters, you will need just to pass an object with the new value as a reference in the initialization. For example:
+
 		$(carouselElementSelector).carousel({iTransitionSpeed	:1500});
 		$(carouselElementSelector).carousel({isAutoPlay: true, iAutoPlayInterval :3500});
 
