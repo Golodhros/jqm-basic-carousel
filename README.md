@@ -33,15 +33,15 @@ In order to change any of this parameters, you will need just to pass an object 
 
 ### Requirements
 
-	- jQuery 1.7.2 (although maybe an older version will be OK)
-	- jquery.easing 1.3
+* jQuery 1.7.2 (although maybe an older version will be OK)
+* <a href="http://gsgd.co.uk/sandbox/jquery/easing/" title="Check jQuery Easing Plugin Homepage">jquery.easing 1.3</a>
 	
 ### Installation Instructions
 
- 	In order to use this plugin you just need to include the above libraries and execute 
+In order to use this plugin you just need to include the above libraries and execute 
  		$(carouselWrapperSelector).carousel();
  		
-	The required markup for a three element Carousel would be:
+The required markup for a three element Carousel would be:
 		<div class="carousel-wrapper">
 			<div class="carousel" id="carousel">
 				<div id="slide-0" class="slide" >
@@ -58,7 +58,8 @@ In order to change any of this parameters, you will need just to pass an object 
 		<nav class="carousel-position">
 			<span id="position"><em class="on">•</em><em>•</em><em>•</em></span>
 		</nav>
-	In this specific case, we will initialize the Carousel with:
+
+In this specific case, we will initialize the Carousel with:
 		<script>
 			(function($){
 				$(".carousel-wrappper").carousel();
@@ -67,7 +68,7 @@ In order to change any of this parameters, you will need just to pass an object 
 	
 ### Operating Instructions
 
-	Once initialized, the plugin offers several methods, like:
+Once initialized, the plugin offers several methods, like:
 		$carouselElement.carousel('swipeLeft')				=> Moves the slide to the left if possible
 		$carouselElement.carousel('swipeRight')				=> Moves the slide to the right if possible
 		$carouselElement.carousel('resetCarousel')			=> Resets the carousel, quite useful with orientation changes or page widht changes
