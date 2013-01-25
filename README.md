@@ -86,21 +86,21 @@ The position of the widget script needs also to change, as you can see in the <a
 
 ### Known Bugs
 	
-	- Right now, you need to specify the maximum height of the content in the carousel throught css
+* Right now, you need to specify the maximum height of the content in the carousel throught css
 
 ### Future Improvements
 	
-	* Cleaning of unnecessary classes in the markup
-	* Make it horizontally responsive
-	* Polish Up and add more tests
-	* Lazy loading of the images that could include
-	* Add more navigation options (prev, next and pause buttons)
+* Cleaning of unnecessary classes in the markup
+* Make it horizontally responsive
+* Polish Up and add more tests
+* Lazy loading of the images that could include
+* Add more navigation options (prev, next and pause buttons)
 
 ### Credits and Acknowledgements
 
- 	* http://docs.jquery.com/Plugins/Authoring (Official jQuery Documentation)
- 	* http://ajpiano.com/widgetfactory/#slide1 (Adam J. Sontag)
- 	* http://coding.smashingmagazine.com/2011/10/11/essential-jquery-plugin-patterns/ (Addy Osmani)
+* http://docs.jquery.com/Plugins/Authoring (Official jQuery Documentation)
+* http://ajpiano.com/widgetfactory/#slide1 (Adam J. Sontag)
+* http://coding.smashingmagazine.com/2011/10/11/essential-jquery-plugin-patterns/ (Addy Osmani)
  		
 ### Copyright and Licensing Information
 
