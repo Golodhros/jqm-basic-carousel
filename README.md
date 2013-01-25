@@ -2,11 +2,12 @@
 
 #### Simple Carousel Plugin for jQuery Mobile
 
-Plugin Demo Page: 
-* http://marcosiglesias.es/plugins/jqm-carousel/demo.html
-
-Widget Demo Page:
-* http://marcosiglesias.es/plugins/jqm-carousel/demo-widget.html
+<dl>
+  <dt>Plugin Demo Page</dt>
+  <dd>http://marcosiglesias.es/plugins/jqm-carousel/demo.html</dd>
+  <dt>Widget Demo Page</dt>
+  <dd>http://marcosiglesias.es/plugins/jqm-carousel/demo-widget.html</dd>
+</dl>
 
 ### Features
  - Lightweight 
