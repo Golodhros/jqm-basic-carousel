@@ -106,6 +106,9 @@ The position of the widget script needs also to change, as you can see in the <a
  		
 ### Copyright and Licensing Information
 
+Copyright (c) 2013 Marcos Iglesias Valle
+Licensed under the MIT license.
+
 ### Changelog
 
 * v1.0 - Initial Version

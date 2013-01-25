@@ -1,8 +1,10 @@
 /*!
- * (jQuery mobile) jQuery UI Widget-factory plugin boilerplate (for 1.8/9+)
- * Author: @scottjehl
- * Further changes: @addyosmani
- * Licensed under the MIT license
+ * jQuery Mobile Basic Carousel Widget
+ * Author: @golodhros
+ * Widget pattern application based on @addyosmani article on Smashing Magazine
+ *
+ * Copyright (c) 2013 Marcos Iglesias Valle
+ * Licensed under the MIT license.
  */
 
 ;(function ( $, window, document, undefined ) {

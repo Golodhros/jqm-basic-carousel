@@ -17,6 +17,9 @@
  * - jquery.easing 1.3
  * References:
  * - http://docs.jquery.com/Plugins/Authoring
+ *
+ * Copyright (c) 2013 Marcos Iglesias Valle
+ * Licensed under the MIT license.
  */
 
 /**
