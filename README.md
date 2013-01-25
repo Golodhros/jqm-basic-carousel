@@ -1,13 +1,6 @@
 # jQuery Mobile Basic Carousel
 
-#### Simple Carousel Plugin for jQuery Mobile
-
-<dl>
-  <dt>Plugin Demo Page</dt>
-  <dd>http://marcosiglesias.es/plugins/jqm-carousel/demo.html</dd>
-  <dt>Widget Demo Page</dt>
-  <dd>http://marcosiglesias.es/plugins/jqm-carousel/demo-widget.html</dd>
-</dl>
+Simple and lightweight carousel plugin/widget for jQuery Mobile applications. It can be used as an image slider or as a page slider (wrapping all kind of content). It can be implemented in two ways, as you can check in the demo pages for the <a href="http://marcosiglesias.es/plugins/jqm-carousel/demo.html" title="Check the demo page of the plugin">Plugin version</a> and the <a href="http://marcosiglesias.es/plugins/jqm-carousel/demo-widget.html" title="Check the widget version demo page">Widget version</a>.
 
 ### Features
  - Lightweight 
