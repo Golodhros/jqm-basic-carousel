@@ -107,9 +107,9 @@ The position of the widget script needs also to change, as you can see in the <a
 
 ### Credits and Acknowledgements
 
-* <a href="http://docs.jquery.com/Plugins/Authoring" title="Check Official jQuery Plugin Creation Docs">Official jQuery Documentation: Plugins/Authoring</a>
-* <a href="http://ajpiano.com/widgetfactory/#slide1" title="Check Adam Sontag Slideshow about the Widget Factory">Adam J. Sontag: The jQuery UI Widget Factory, WAT?</a>
-* <a href="http://coding.smashingmagazine.com/2011/10/11/essential-jquery-plugin-patterns/" title="Check Addy Osmani's Article in Smashing Magazine">Addy Osmani: Essential jQuery Plugin Patterns</a>
+* Official jQuery Documentation: <a href="http://docs.jquery.com/Plugins/Authoring" title="Check Official jQuery Plugin Creation Docs">Plugins/Authoring</a>
+* Adam J. Sontag: <a href="http://ajpiano.com/widgetfactory/#slide1" title="Check Adam Sontag Slideshow about the Widget Factory">The jQuery UI Widget Factory, WAT?</a>
+* Addy Osmani on Smashing Magazine:<a href="http://coding.smashingmagazine.com/2011/10/11/essential-jquery-plugin-patterns/" title="Check Addy Osmani's Article in Smashing Magazine">Essential jQuery Plugin Patterns</a>
  		
 ### Copyright and Licensing Information
 
