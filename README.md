@@ -69,14 +69,21 @@ In this specific case, we will initialize the Carousel with:
 ### Operating Instructions
 
 Once initialized, the plugin offers several methods, like:
-		$carouselElement.carousel('swipeLeft')				=> Moves the slide to the left if possible
-		$carouselElement.carousel('swipeRight')				=> Moves the slide to the right if possible
-		$carouselElement.carousel('resetCarousel')			=> Resets the carousel, quite useful with orientation changes or page widht changes
-		$carouselElement.carousel('getCurrentSlideIndex')	=> Returns the index of the current Slide, starting from 0
-		$carouselElement.carousel('getSlidersMaxHeight')	=> Returns the maximum height of the loaded slides, useful in order to set this width programatically insted of by css as currently
+
+<dl>
+  <dt>$carouselElement.carousel('swipeLeft')</dt>
+  <dd>Moves the slide to the left if possible</dd>
+  <dt>$carouselElement.carousel('swipeRight')</dt>
+  <dd>Moves the slide to the right if possible</dd>
+  <dt>$carouselElement.carousel('resetCarousel')</dt>
+  <dd>Resets the carousel, quite useful with orientation changes or page widht changes</dd>
+  <dt>$carouselElement.carousel('getCurrentSlideIndex')</dt>
+  <dd>Returns the index of the current Slide, starting from 0</dd>
+  <dt>$carouselElement.carousel('getSlidersMaxHeight')</dt>
+  <dd>Returns the maximum height of the loaded slides, useful in order to set this width programatically insted of by css as currently</dd>
+</dl>
 		
-New Widget Version (Needs Testing)
-----------------------------------
+## New Widget Version (Needs Testing)
 
 Uses the same markup, but it just needs the carrousel-wrapper element to have data-role="carousel" for it to initialize automatically (with the pageshow event). Example:
 
@@ -98,9 +105,9 @@ The position of the widget script needs also to change, as you can see in the <a
 
 ### Credits and Acknowledgements
 
-* http://docs.jquery.com/Plugins/Authoring (Official jQuery Documentation)
-* http://ajpiano.com/widgetfactory/#slide1 (Adam J. Sontag)
-* http://coding.smashingmagazine.com/2011/10/11/essential-jquery-plugin-patterns/ (Addy Osmani)
+* <a href="http://docs.jquery.com/Plugins/Authoring" title="Check Official jQuery Plugin Creation Docs">Official jQuery Documentation: Plugins/Authoring</a>
+* <a href="http://ajpiano.com/widgetfactory/#slide1" title="Check Adam Sontag Slideshow about the Widget Factory">Adam J. Sontag: The jQuery UI Widget Factory, WAT?</a>
+* <a href="http://coding.smashingmagazine.com/2011/10/11/essential-jquery-plugin-patterns/" title="Check Addy Osmani's Article in Smashing Magazine">Addy Osmani: Essential jQuery Plugin Patterns</a>
  		
 ### Copyright and Licensing Information
 
