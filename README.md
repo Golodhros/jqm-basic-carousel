@@ -89,9 +89,9 @@ Once initialized, the plugin offers several methods, like:
 
 Uses the same markup, but it just needs the carrousel-wrapper element to have data-role="carousel" for it to initialize automatically (with the pageshow event). Example:
 
-<div class="carousel-wrapper" data-role="carousel">
+		<div class="carousel-wrapper" data-role="carousel">
 
-The position of the widget script needs also to change, as you can see in the <a href="http://marcosiglesias.es/plugins/jqm-carousel/demo-widget.html" title="demo widget page">demo</a>.
+The position of the widget script needs also to change, as you can see in the <a href="http://marcosiglesias.es/plugins/jqm-carousel/demo-widget.html" title="demo widget page">demo page</a>.
 
 ### Known Bugs
 	
@@ -115,6 +115,6 @@ The position of the widget script needs also to change, as you can see in the <a
 
 ### Changelog
 
-v1.0 - Initial Version
-v1.1 - Changed Plugin Design Pattern
-v1.2 - Added Widget Version
+* v1.0 - Initial Version
+* v1.1 - Changed Plugin Design Pattern
+* v1.2 - Added Widget Version
