@@ -1,7 +1,7 @@
 jQuery Mobile Carousel
 ====================================
 
-Simple Carousel Plugin for jQuery Mobile
+## Simple Carousel Plugin for jQuery Mobile
 
 Plugin Demo Page: 
 http://marcosiglesias.es/plugins/jqm-carousel/demo.html
@@ -9,7 +9,7 @@ http://marcosiglesias.es/plugins/jqm-carousel/demo.html
 Widget Demo Page:
 http://marcosiglesias.es/plugins/jqm-carousel/demo-widget.html
 
-Features
+### Features
  - Lightweight 
  - Little dependencies, just jquery easing library
  - Responsive (although would require a reset in order to adapt to viewport width changes)
@@ -17,7 +17,7 @@ Features
  - Configurable transition effect type and transition speed
  - Configurable AutoPlay and AutoPlay Time Interval
 
-Configuration Instructions
+### Configuration Instructions
 
 	The Default configuration options are the following:
 	
@@ -31,12 +31,12 @@ Configuration Instructions
 		$(carouselElementSelector).carousel({iTransitionSpeed	:1500});
 		$(carouselElementSelector).carousel({isAutoPlay: true, iAutoPlayInterval :3500});
 
-Requirements
+### Requirements
 
 	- jQuery 1.7.2 (although maybe an older version will be OK)
 	- jquery.easing 1.3
 	
-Installation Instructions
+### Installation Instructions
 
  	In order to use this plugin you just need to include the above libraries and execute 
  		$(carouselWrapperSelector).carousel();
@@ -65,7 +65,7 @@ Installation Instructions
 			})(jQuery);
 		</script>
 	
-Operating Instructions
+### Operating Instructions
 
 	Once initialized, the plugin offers several methods, like:
 		$carouselElement.carousel('swipeLeft')				=> Moves the slide to the left if possible
@@ -75,6 +75,7 @@ Operating Instructions
 		$carouselElement.carousel('getSlidersMaxHeight')	=> Returns the maximum height of the loaded slides, useful in order to set this width programatically insted of by css as currently
 		
 New Widget Version (Needs Testing)
+----------------------------------
 
 Uses the same markup, but it just needs the carrousel-wrapper element to have data-role="carousel" for it to initialize automatically (with the pageshow event). Example:
 
@@ -82,26 +83,28 @@ Uses the same markup, but it just needs the carrousel-wrapper element to have da
 
 The position of the widget script needs also to change, as you can see in the <a href="http://marcosiglesias.es/plugins/jqm-carousel/demo-widget.html" title="demo widget page">demo</a>.
 
-Known Bugs
+### Known Bugs
 	
 	- Right now, you need to specify the maximum height of the content in the carousel throught css
 
-Future Improvements
+### Future Improvements
 	
 	- Cleaning of unnecessary classes in the markup
 	- Make it horizontally responsive
 	- Polish Up and add more tests
+	- Lazy loading of the images that could include
+	- Add more navigation options (prev, next and pause buttons)
 
-Credits and Acknowledgements
+### Credits and Acknowledgements
 
 	References:
  		- http://docs.jquery.com/Plugins/Authoring (Official jQuery Documentation)
  		- http://ajpiano.com/widgetfactory/#slide1 (Adam J. Sontag)
  		- http://coding.smashingmagazine.com/2011/10/11/essential-jquery-plugin-patterns/ (Addy Osmani)
  		
-Copyright and Licensing Information
+### Copyright and Licensing Information
 
-Changelog
+### Changelog
 
 v1.0 - Initial Version
 v1.1 - Changed Plugin Design Pattern
