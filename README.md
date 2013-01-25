@@ -1,13 +1,12 @@
-jQuery Mobile Carousel
-====================================
+# jQuery Mobile Basic Carousel
 
-## Simple Carousel Plugin for jQuery Mobile
+#### Simple Carousel Plugin for jQuery Mobile
 
 Plugin Demo Page: 
-http://marcosiglesias.es/plugins/jqm-carousel/demo.html
+* http://marcosiglesias.es/plugins/jqm-carousel/demo.html
 
 Widget Demo Page:
-http://marcosiglesias.es/plugins/jqm-carousel/demo-widget.html
+* http://marcosiglesias.es/plugins/jqm-carousel/demo-widget.html
 
 ### Features
  - Lightweight 
@@ -89,18 +88,17 @@ The position of the widget script needs also to change, as you can see in the <a
 
 ### Future Improvements
 	
-	- Cleaning of unnecessary classes in the markup
-	- Make it horizontally responsive
-	- Polish Up and add more tests
-	- Lazy loading of the images that could include
-	- Add more navigation options (prev, next and pause buttons)
+	* Cleaning of unnecessary classes in the markup
+	* Make it horizontally responsive
+	* Polish Up and add more tests
+	* Lazy loading of the images that could include
+	* Add more navigation options (prev, next and pause buttons)
 
 ### Credits and Acknowledgements
 
-	References:
- 		- http://docs.jquery.com/Plugins/Authoring (Official jQuery Documentation)
- 		- http://ajpiano.com/widgetfactory/#slide1 (Adam J. Sontag)
- 		- http://coding.smashingmagazine.com/2011/10/11/essential-jquery-plugin-patterns/ (Addy Osmani)
+ 	* http://docs.jquery.com/Plugins/Authoring (Official jQuery Documentation)
+ 	* http://ajpiano.com/widgetfactory/#slide1 (Adam J. Sontag)
+ 	* http://coding.smashingmagazine.com/2011/10/11/essential-jquery-plugin-patterns/ (Addy Osmani)
  		
 ### Copyright and Licensing Information
 
