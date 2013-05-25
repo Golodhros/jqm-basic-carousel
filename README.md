@@ -5,16 +5,16 @@
 Check the <a href="http://www.marcosiglesias.es/jqm-carousel/demo/" title="jQuery Mobile Basic Carousel Demo Page">Demo Page</a>.
 
 ### Features
- - <strong>Lightweight (7Kb total)</strong>
- - Little dependencies (just jquery easing)
- - <strong>Responsive</strong>
- - <strong>AutoPlay</strong> with configurable AutoPlay Time Interval
- - Configurable transition effect type and transition speed
+- <strong>Lightweight (7Kb total)</strong>
+- Little dependencies (just jquery easing)
+- <strong>Responsive</strong>
+- <strong>AutoPlay</strong> with configurable AutoPlay Time Interval
+- Configurable transition effect type and transition speed
 
- ### Requirements
+### Requirements
 
- * Works with jQuery Mobile from 1.1 up to 1.3.1
- * Needs <a href="http://gsgd.co.uk/sandbox/jquery/easing/" title="Check jQuery Easing Plugin Homepage">jquery.easing 1.3</a>
+* Works with jQuery Mobile from 1.1 up to 1.3.1
+* Needs <a href="http://gsgd.co.uk/sandbox/jquery/easing/" title="Check jQuery Easing Plugin Homepage">jquery.easing 1.3</a>
 
 
 ### Installation Instructions
