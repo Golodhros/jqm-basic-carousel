@@ -20,12 +20,10 @@
             isAutoPlay              :false,
             iAutoPlayInterval       :2000,
             // Doubts
-            sCounterElements        :".position em",
+            sCounterElements        :'.position em',
             sCounterOnClassName     :'on',
-            sSlideIdPrefix          :'#slide-',
-            sSlideClass             :'.slide',
-            sCarouselElementClass   :'.carousel',
-            sContentClass           :'.slide-container'
+            sSlideClassPrefix       :'.slide-',
+            sCarouselElementClass   :'.carousel'
         },
 
         _iSlideCounter : 0,
@@ -43,7 +41,8 @@
         //  Depending on the animation direction we set the margin of the slide
         _animateSlider: function( iElement, sDirection ){
             var margin = sDirection === 'right' ? 0 : - this.options.iSliderWidth;
-            $(this.options.sSlideIdPrefix + iElement )
+
+            $(this.options.sSlideClassPrefix + iElement )
                 .animate({
                     marginLeft: margin
                 }, this.options.iTransitionSpeed, this.options.sTransitionType);
@@ -52,6 +51,7 @@
         //  When an orientation change event occurs, we need to reset the carousel in order to have the proper widths for the slides
         _bindOrientationChange: function(){
             var self = this;
+
             $(document).on('orientationchange', function(){
                 self.resetCarousel();
             });
@@ -120,15 +120,13 @@
         //  We obtain the width of the responsive carousel and apply it to the containers of the slide elements and its content
         _setSliderInfo: function(){
             var $el             = $(this.element),
-                iNumSlides      = $el.find(this.options.sSlideClass).length,
+                $carousel       = $el.children(),
+                $slides         = $carousel.children(),
+                iNumSlides      = $slides.length,
                 iSliderWidth    = $el.width();
 
-            $el
-                .add(this.options.sSlideClass)
-                .add(this.options.sContentClass)
-                .css({width: iSliderWidth});
-            $(this.options.sCarouselElementClass)
-                .css({width: iSliderWidth*iNumSlides});
+            $el.add($slides).css({width: iSliderWidth});
+            $carousel.css({width: iSliderWidth*iNumSlides});
 
             this.options.iNumSlides = iNumSlides;
             this.options.iSliderWidth = iSliderWidth;

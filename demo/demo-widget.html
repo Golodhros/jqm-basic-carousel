@@ -6,45 +6,57 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="stylesheet" href="css/jquery.mobile.structure-1.1.1.min.css" />
-	<link rel="stylesheet" href="css/jquery.mobile.theme-1.1.1.min.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+	<link rel="stylesheet" href="../css/jqm-carousel.css" />
 	<link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-	<!-- Demo -->
-	<div data-role="page" id="progress" data-theme="b">
+
+	<div data-role="page" id="progress" data-theme="c">
 		<div data-role="header" data-theme="a">
-			<h1>jQuery Mobile Basic Carousel</h1>
+			<h1>Basic Carousel</h1>
 		</div>
-		<div id="content" class="main-content" data-iscroll data-role="content">
+		<div id="content" class="main-content" data-role="content">
 			<div class="mod carousel-demo">
 				<div class="inner">
-					<div class="hd">
-						<h2>Basic Carousel</h2>
-					</div>
 					<div class="bd">
 						<div class="carousel-wrapper" data-role="carousel">
 							<div class="carousel">
-								<div id="slide-0" class="slide" >
+								<div class="slide slide-0">
+									<div class="slide-container clearfix media">
+										<div class="img sm-img">
+											<img src="http://behance.vo.llnwd.net/profiles2/138316/projects/7673825/9c880ddbda4cb53199699b430fd53e76.jpg" />
+										</div>
+										<div class="body">
+											<h3 class="h3">Characteristics:</h3>
+											<ul class="list">
+												<li>Any type of content (images, text, video)</li>
+												<li>Lightweight, 7Kb minified</li>
+												<li>One dependency (jQuery Easing)</li>
+												<li>One dependency (jQuery Easing)</li>
+												<li>Responsive</li>
+												<li>Autoplay</li>
+											</ul>
+											<h3 class="h3">Also as a slideshow!</h3>
+										</div>
+									</div>
+								</div>
+								<div class="slide slide-1">
+									<div class="slide-container clearfix">
+										<img class="wd-img" src="http://behance.vo.llnwd.net/profiles2/138316/projects/7673825/723ee22bf36526586c0fc912c28a40a9.jpg" />
+									</div>
+								</div>
+								<div class="slide slide-2">
 									<div class="slide-container clearfix media">
 										<div class="img sm-img">
 											<img src="http://behance.vo.llnwd.net/profiles2/138316/projects/7673825/b2f6198d6d33fb45988f27e38a36d264.jpg" />
 										</div>
 										<div class="body">
-											<h4>Some text here</h4>
-											<p>Plugin by <a class="link" href="http://www.marcosiglesias.es" title="Check more info about me">Marcos Iglesias</a></p>
+											<p>Widget by <a class="link" href="http://www.marcosiglesias.es" title="Check more info about me">Marcos Iglesias</a></p>
 											<p>Ilustrations by <a class="link" href="http://www.behance.net/carogonzalez" title="Check Carolinas Work in Behance">Carolina Gonz&aacute;lez</a></p>
+
+											<h4 class="h4">Check also my <a class="link" href="https://github.com/Golodhros/jquery-mobile-require-less" title="Github project">jQuery Mobile Jumpstart</a></h4>
 										</div>
-									</div>
-								</div>
-								<div id="slide-1" class="slide" >
-									<div class="slide-container clearfix">
-										<img class="wd-img" src="http://behance.vo.llnwd.net/profiles2/138316/projects/7673825/9c880ddbda4cb53199699b430fd53e76.jpg" />
-									</div>
-								</div>
-								<div id="slide-2" class="slide" >
-									<div class="slide-container clearfix">
-										<img class="wd-img" src="http://behance.vo.llnwd.net/profiles2/138316/projects/7673825/723ee22bf36526586c0fc912c28a40a9.jpg" />
 									</div>
 								</div>
 							</div>
@@ -59,15 +71,17 @@
 			</div>
 		</div>
 	</div>
-	<!-- /Demo -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script type="text/javascript">if (typeof jQuery == 'undefined') { document.write(unescape("%3Cscript src='js/jquery-1.7.2.min.js' type='text/javascript'%3E%3C/script%3E")); }</script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<!-- Offline Fallback -->
+	<script type="text/javascript">if (typeof jQuery === 'undefined') { document.write(unescape("%3Cscript src='js/jquery.js' type='text/javascript'%3E%3C/script%3E")); }</script>
+	<!-- Dependency -->
 	<script src="../jquery.easing.js"></script>
-	<!--
-	TODO: for offline testing
-	<script src="js/jquery.mobile-1.1.1.min.js"></script>
-	-->
-	<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+
+	<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+	<!-- Offline Fallback -->
+	<script type="text/javascript">if (typeof $.mobile === 'undefined') { document.write(unescape("%3Cscript src='js/jquery.mobile-1.3.1.min.js' type='text/javascript'%3E%3C/script%3E")); }</script>
+
 	<!-- Set As jQuery Mobile Auto Initialized Widget -->
 	<script src="../jqm-carousel-widget.js"></script>
 </body>

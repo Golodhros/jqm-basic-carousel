@@ -92,14 +92,14 @@
 		//	If it is not the first time the Carousel is loaded in the Dom we reset the Carousel
 		handleCarouselInit: function(){
 			if(!config.isSwipeSet){
-			    methods.setSliderInfo();
+				methods.setSliderInfo();
 				methods.bindOrientationChange();
 				config.isSwipeSet = true;
 			}else{
-				methods.resetCarousel()
+				methods.resetCarousel();
 			}
-		    methods.bindSwipeEvents();
-		    methods.setAutoPlay();
+			methods.bindSwipeEvents();
+			methods.setAutoPlay();
 		},
 
 		//	We obtain the width of the responsive carousel and apply it to the containers of the slide elements and its content
@@ -181,7 +181,7 @@
 		//	When an orientation change event occurs, we need to reset the carousel in order to have the proper widths for the slides
 		bindOrientationChange: function(){
 			$(document).on('orientationchange', config.sPageContainer, function(){
-		    	methods.resetCarousel();
+				methods.resetCarousel();
 			});
 		},
 

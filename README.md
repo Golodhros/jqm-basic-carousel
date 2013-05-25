@@ -3,19 +3,18 @@
 Simple and lightweight carousel plugin/widget for jQuery Mobile applications. It can be used as an image slider or as a page slider (wrapping all kind of content). It can be implemented in two ways, as you can check in the demo pages for the <a href="http://marcosiglesias.es/plugins/jqm-carousel/demo.html" title="Check the demo page of the plugin">Plugin version</a> and the <a href="http://marcosiglesias.es/plugins/jqm-carousel/demo-widget.html" title="Check the widget version demo page">Widget version</a>.
 
 ### Features
- - Lightweight
- - Little dependencies, just jquery easing library
- - Responsive (although would require a reset in order to adapt to viewport width changes)
- - Just for horizontal swipe events
+ - <strong>Lightweight</strong>, 7Kb including depencencies
+ - Little dependencies (just jquery easing)
+ - <strong>Responsive</strong> (although would require a reset in order to adapt to viewport width changes)
+ - <strong>AutoPlay</strong> and AutoPlay Time Interval
  - Configurable transition effect type and transition speed
- - Configurable AutoPlay and AutoPlay Time Interval
 
 ### Configuration Instructions
 
 The Default configuration options are the following:
 
 		iTransitionSpeed	:500
-		iAutoPlayInterval	:2000 (2 seconds)
+		iAutoPlayInterval	:2000 (ms)
 		sTransitionType		:'easeOutCirc'
 		sInitEvent			:'pageshow'
 
@@ -26,40 +25,36 @@ In order to change any of this parameters, you will need just to pass an object 
 
 ### Requirements
 
-* jQuery 1.7.2 (although maybe an older version will be OK)
+* Works with jQuery Mobile from 1.1 up to 1.3.1
 * <a href="http://gsgd.co.uk/sandbox/jquery/easing/" title="Check jQuery Easing Plugin Homepage">jquery.easing 1.3</a>
 
 ### Installation Instructions
 
-In order to use this plugin you just need to include the above libraries and execute
- 		$(carouselWrapperSelector).carousel();
+The carousel widget script needs to be loaded just after the jquery-mobile library, as you can see in the demo page.
 
-The required markup for a three element Carousel would be:
+It needs the carrousel-wrapper element to have data-role="carousel" for it to initialize automatically (with the pageshow event). The markup for a three element Carousel would be:
 
-		<div class="carousel-wrapper">
-			<div class="carousel" id="carousel">
-				<div id="slide-0" class="slide" >
-					<div class="slide-container"></div>
-				</div>
-				<div id="slide-1" class="slide" >
-					<div class="slide-container"></div>
-				</div>
-				<div id="slide-2" class="slide" >
+		<div class="carousel-wrapper" data-role="carousel">
+			<div class="carousel">
+                <div class="slide-0 slide">
+                    <div class="slide-container"></div>
+                </div>
+                <div class="slide-1 slide">
+                    <div class="slide-container"></div>
+                </div>
+				<div class="slide-2 slide">
 					<div class="slide-container"></div>
 				</div>
 			</div>
 		</div>
+
+Then you can add the navigation where you want, with this markup:
+
 		<nav class="carousel-position">
 			<span id="position"><em class="on">•</em><em>•</em><em>•</em></span>
 		</nav>
 
-In this specific case, we will initialize the Carousel with:
-
-		<script>
-			(function($){
-				$(".carousel-wrappper").carousel();
-			})(jQuery);
-		</script>
+Fork this project and access to the demo page in order to see it in action right away!
 
 ### Operating Instructions
 
@@ -67,24 +62,20 @@ Once initialized, the plugin offers several methods, like:
 
 <dl>
   <dt>$carouselElement.carousel('swipeLeft')</dt>
-  <dd>Moves the slide to the left if possible</dd>
+  <dd>Animates the slide to the left if possible</dd>
   <dt>$carouselElement.carousel('swipeRight')</dt>
-  <dd>Moves the slide to the right if possible</dd>
+  <dd>Animates the slide to the right if possible</dd>
   <dt>$carouselElement.carousel('resetCarousel')</dt>
-  <dd>Resets the carousel, quite useful with orientation changes or page widht changes</dd>
+  <dd>Resets the carousel, quite useful with orientation changes or page width changes</dd>
   <dt>$carouselElement.carousel('getCurrentSlideIndex')</dt>
   <dd>Returns the index of the current Slide, starting from 0</dd>
   <dt>$carouselElement.carousel('getSlidersMaxHeight')</dt>
   <dd>Returns the maximum height of the loaded slides, useful in order to set this width programatically insted of by css as currently</dd>
+  <dt>$carouselElement.carousel('stopAutoPlay')</dt>
+  <dd>Stops the Autoplay feature</dd>
+  <dt>$carouselElement.carousel('destroy')</dt>
+  <dd>Removes the carousel from the page</dd>
 </dl>
-
-## New Widget Version (Needs Testing)
-
-Uses the same markup, but it just needs the carrousel-wrapper element to have data-role="carousel" for it to initialize automatically (with the pageshow event). Example:
-
-		<div class="carousel-wrapper" data-role="carousel">
-
-The position of the widget script needs also to change, as you can see in the <a href="http://marcosiglesias.es/plugins/jqm-carousel/demo-widget.html" title="demo widget page">demo page</a>.
 
 ### Known Bugs
 
@@ -114,3 +105,4 @@ Licensed under the MIT license.
 * v1.0 - Initial Version
 * v1.1 - Changed Plugin Design Pattern
 * v1.2 - Added Widget Version
+* v1.5 - Removed the plugin version and added Autoplay option

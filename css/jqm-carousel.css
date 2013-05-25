@@ -1,0 +1,26 @@
+ /*
+ * CSS
+ */
+    /* Carousel Styles */
+    .carousel-wrapper{
+        overflow: hidden;
+        margin: 0 auto;
+        position: relative;
+    }
+        .carousel {
+            padding: 0.5em 0;
+            margin: 0;
+            overflow: hidden;
+            width: 2000px;          /* Arbitrary number, would be bigger if necessary */
+        }
+            .carousel .slide {
+                float: left;
+                display: block;
+                overflow: hidden;
+                height: 400px;      /* You will need to set this height to the max of the containers*/
+            }
+
+    /* Navigation styles */
+    .carousel-position{width: auto; margin: 0 auto;}
+        .carousel-position em{ font-style: normal; margin: 0 0.1em;}
+                .carousel-position .on{ color: #45bf28;}
