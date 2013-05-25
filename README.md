@@ -5,11 +5,45 @@
 Check the <a href="http://www.marcosiglesias.es/jqm-carousel/demo/" title="jQuery Mobile Basic Carousel Demo Page">Demo Page</a>.
 
 ### Features
- - <strong>Lightweight: 7Kb</strong> including depencencies
+ - <strong>Lightweight (7Kb total)</strong>
  - Little dependencies (just jquery easing)
- - <strong>Responsive</strong> (although would require a reset in order to adapt to viewport width changes)
- - <strong>AutoPlay</strong> and AutoPlay Time Interval
+ - <strong>Responsive</strong>
+ - <strong>AutoPlay</strong> with configurable AutoPlay Time Interval
  - Configurable transition effect type and transition speed
+
+ ### Requirements
+
+ * Works with jQuery Mobile from 1.1 up to 1.3.1
+ * Needs <a href="http://gsgd.co.uk/sandbox/jquery/easing/" title="Check jQuery Easing Plugin Homepage">jquery.easing 1.3</a>
+
+
+### Installation Instructions
+
+The carousel widget script needs to be loaded just after the jquery-mobile library, as you can see in the demo page.
+
+It needs the carrousel-wrapper element to have data-role="carousel" for it to initialize automatically (with the pageshow event). The markup for a three element Carousel would be:
+
+        <div class="carousel-wrapper" data-role="carousel">
+            <div class="carousel">
+                 <div class="slide-0 slide">
+                     <div class="slide-container"></div>
+                 </div>
+                 <div class="slide-1 slide">
+                     <div class="slide-container"></div>
+                 </div>
+                <div class="slide-2 slide">
+                    <div class="slide-container"></div>
+                </div>
+            </div>
+        </div>
+
+Then you can add the navigation where you want, with this markup:
+
+        <nav class="carousel-position">
+            <span id="position"><em class="on">•</em><em>•</em><em>•</em></span>
+        </nav>
+
+Fork this project or visit the <a href="http://www.marcosiglesias.es/jqm-carousel/demo/" title="jQuery Mobile Basic Carousel Demo Page">Demo Page</a> in order to see it in action right away!
 
 ### Configuration Instructions
 
@@ -24,39 +58,6 @@ In order to change any of this parameters, you will need just to pass an object 
 
 		$(carouselElementSelector).carousel({iTransitionSpeed	:1500});
 		$(carouselElementSelector).carousel({isAutoPlay: true, iAutoPlayInterval :3500});
-
-### Requirements
-
-* Works with jQuery Mobile from 1.1 up to 1.3.1
-* <a href="http://gsgd.co.uk/sandbox/jquery/easing/" title="Check jQuery Easing Plugin Homepage">jquery.easing 1.3</a>
-
-### Installation Instructions
-
-The carousel widget script needs to be loaded just after the jquery-mobile library, as you can see in the demo page.
-
-It needs the carrousel-wrapper element to have data-role="carousel" for it to initialize automatically (with the pageshow event). The markup for a three element Carousel would be:
-
-		<div class="carousel-wrapper" data-role="carousel">
-			<div class="carousel">
-                <div class="slide-0 slide">
-                    <div class="slide-container"></div>
-                </div>
-                <div class="slide-1 slide">
-                    <div class="slide-container"></div>
-                </div>
-				<div class="slide-2 slide">
-					<div class="slide-container"></div>
-				</div>
-			</div>
-		</div>
-
-Then you can add the navigation where you want, with this markup:
-
-		<nav class="carousel-position">
-			<span id="position"><em class="on">•</em><em>•</em><em>•</em></span>
-		</nav>
-
-Fork this project and access to the demo page in order to see it in action right away!
 
 ### Operating Instructions
 
@@ -85,10 +86,8 @@ Once initialized, the plugin offers several methods, like:
 
 ### Future Improvements
 
-* Cleaning of unnecessary classes in the markup
-* Make it horizontally responsive
-* Polish Up and add more tests
-* Lazy loading of the images that could include
+* Remove jQuery easing and use CSS3 Animations
+* Add more tests
 * Add more navigation options (prev, next and pause buttons)
 
 ### Credits and Acknowledgements
