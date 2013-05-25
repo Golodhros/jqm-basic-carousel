@@ -3,7 +3,7 @@
 Simple and lightweight carousel plugin/widget for jQuery Mobile applications. It can be used as an image slider or as a page slider (wrapping all kind of content). It can be implemented in two ways, as you can check in the demo pages for the <a href="http://marcosiglesias.es/plugins/jqm-carousel/demo.html" title="Check the demo page of the plugin">Plugin version</a> and the <a href="http://marcosiglesias.es/plugins/jqm-carousel/demo-widget.html" title="Check the widget version demo page">Widget version</a>.
 
 ### Features
- - Lightweight 
+ - Lightweight
  - Little dependencies, just jquery easing library
  - Responsive (although would require a reset in order to adapt to viewport width changes)
  - Just for horizontal swipe events
@@ -13,12 +13,12 @@ Simple and lightweight carousel plugin/widget for jQuery Mobile applications. It
 ### Configuration Instructions
 
 The Default configuration options are the following:
-	
+
 		iTransitionSpeed	:500
 		iAutoPlayInterval	:2000 (2 seconds)
 		sTransitionType		:'easeOutCirc'
 		sInitEvent			:'pageshow'
-	
+
 In order to change any of this parameters, you will need just to pass an object with the new value as a reference in the initialization. For example:
 
 		$(carouselElementSelector).carousel({iTransitionSpeed	:1500});
@@ -28,12 +28,12 @@ In order to change any of this parameters, you will need just to pass an object 
 
 * jQuery 1.7.2 (although maybe an older version will be OK)
 * <a href="http://gsgd.co.uk/sandbox/jquery/easing/" title="Check jQuery Easing Plugin Homepage">jquery.easing 1.3</a>
-	
+
 ### Installation Instructions
 
-In order to use this plugin you just need to include the above libraries and execute 
+In order to use this plugin you just need to include the above libraries and execute
  		$(carouselWrapperSelector).carousel();
- 		
+
 The required markup for a three element Carousel would be:
 
 		<div class="carousel-wrapper">
@@ -60,7 +60,7 @@ In this specific case, we will initialize the Carousel with:
 				$(".carousel-wrappper").carousel();
 			})(jQuery);
 		</script>
-	
+
 ### Operating Instructions
 
 Once initialized, the plugin offers several methods, like:
@@ -77,7 +77,7 @@ Once initialized, the plugin offers several methods, like:
   <dt>$carouselElement.carousel('getSlidersMaxHeight')</dt>
   <dd>Returns the maximum height of the loaded slides, useful in order to set this width programatically insted of by css as currently</dd>
 </dl>
-		
+
 ## New Widget Version (Needs Testing)
 
 Uses the same markup, but it just needs the carrousel-wrapper element to have data-role="carousel" for it to initialize automatically (with the pageshow event). Example:
@@ -87,11 +87,11 @@ Uses the same markup, but it just needs the carrousel-wrapper element to have da
 The position of the widget script needs also to change, as you can see in the <a href="http://marcosiglesias.es/plugins/jqm-carousel/demo-widget.html" title="demo widget page">demo page</a>.
 
 ### Known Bugs
-	
+
 * Right now, you need to specify the maximum height of the content in the carousel throught css
 
 ### Future Improvements
-	
+
 * Cleaning of unnecessary classes in the markup
 * Make it horizontally responsive
 * Polish Up and add more tests
@@ -103,7 +103,7 @@ The position of the widget script needs also to change, as you can see in the <a
 * Official jQuery Documentation: <a href="http://docs.jquery.com/Plugins/Authoring" title="Check Official jQuery Plugin Creation Docs">Plugins/Authoring</a>
 * Adam J. Sontag: <a href="http://ajpiano.com/widgetfactory/#slide1" title="Check Adam Sontag Slideshow about the Widget Factory">The jQuery UI Widget Factory, WAT?</a>
 * Addy Osmani on Smashing Magazine:<a href="http://coding.smashingmagazine.com/2011/10/11/essential-jquery-plugin-patterns/" title="Check Addy Osmani's Article in Smashing Magazine">Essential jQuery Plugin Patterns</a>
- 		
+
 ### Copyright and Licensing Information
 
 Copyright (c) 2013 Marcos Iglesias Valle

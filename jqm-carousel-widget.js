@@ -22,7 +22,7 @@
             // Doubts
             sCounterElements        :".position em",
             sCounterOnClassName     :'on',
-            sSlideIdPrefix          :'#slide-', 
+            sSlideIdPrefix          :'#slide-',
             sSlideClass             :'.slide',
             sCarouselElementClass   :'.carousel',
             sContentClass           :'.slide-container'
@@ -31,7 +31,7 @@
         _iSlideCounter : 0,
 
         _create: function() {
-            // _create will automatically run the first time this 
+            // _create will automatically run the first time this
             // widget is called.
 
             this._setSliderInfo();
@@ -60,7 +60,7 @@
         //  Setting of the callbacks for swipe events
         _bindSwipeEvents: function(){
             if(!$(this.options.sCarouselElementClass).length){return;}
-            
+
             $(this.options.sCarouselElementClass)
                 .on( "swiperight", $(this.options.sCarouselElementClass), $.proxy(this.swipeRight, this))
                 .on( "swipeleft", $(this.options.sCarouselElementClass), $.proxy(this.swipeLeft, this));
@@ -81,14 +81,14 @@
             if( iCurrentSlide !== 0){
                 for(var i=iCurrentSlide; i>-1; i--){
                     this._animateSlider( i, "right" );
-                }           
+                }
             }
         },
 
         //  Resets the navigation dots on the bottom of the carousel
         resetDotCounter: function(){
             var options = this.options;
-            $(options.sCounterElements).each(function(item){ 
+            $(options.sCounterElements).each(function(item){
                 $(options.sCounterElements).eq(item).removeClass(options.sCounterOnClassName);
             });
         },
@@ -122,7 +122,7 @@
             var $el             = $(this.element),
                 iNumSlides      = $el.find(this.options.sSlideClass).length,
                 iSliderWidth    = $el.width();
-            
+
             $el
                 .add(this.options.sSlideClass)
                 .add(this.options.sContentClass)
@@ -134,7 +134,7 @@
             this.options.iSliderWidth = iSliderWidth;
         },
 
-        // Public methods that can be called externally: 
+        // Public methods that can be called externally:
         // $("#myelem").carousel( "resetCarousel", arguments );
 
         //  Returns the selected Slide Index
@@ -158,9 +158,9 @@
 
         //  Callback for left oriented swipe movements
         swipeLeft: function(){
-            //  First checks if we are at the end of the Carousel           
+            //  First checks if we are at the end of the Carousel
             if( this._isLastSlide() ) { return; }
-            
+
             this._animateSlider( this._iSlideCounter, "left" );
             this._iSlideCounter++;
             this.setDotCounter( this._iSlideCounter );
@@ -176,7 +176,7 @@
             this.setDotCounter( this._iSlideCounter );
         },
 
-        // Destroy an instantiated plugin and clean up modifications 
+        // Destroy an instantiated plugin and clean up modifications
         // the widget has made to the DOM
         destroy: function () {
             $.Widget.prototype.destroy.call(this);
