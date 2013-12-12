@@ -7,13 +7,15 @@ Check the <a href="http://www.marcosiglesias.es/jqm-carousel/demo/" title="jQuer
 ### Features
 - <strong>Lightweight (7Kb total)</strong>
 - Little dependencies (just jquery easing)
-- <strong>Responsive</strong>
-- <strong>AutoPlay</strong> with configurable AutoPlay Time Interval
+- Clean code, extend it easily!
+- Easy to plug, add the widget, some markup and a data-role and you are ready!
 - Configurable transition effect type and transition speed
+- <strong>AutoPlay</strong> with configurable AutoPlay Time Interval
+- <strong>Responsive</strong>
 
 ### Requirements
 
-* Works with jQuery Mobile from 1.1 up to 1.3.1
+* Works with jQuery Mobile from 1.1 up to 1.3.2
 * Needs <a href="http://gsgd.co.uk/sandbox/jquery/easing/" title="Check jQuery Easing Plugin Homepage">jquery.easing 1.3</a>
 
 
@@ -52,7 +54,7 @@ The Default configuration options are the following:
 		iTransitionSpeed	:500
 		iAutoPlayInterval	:2000 (ms)
 		sTransitionType		:'easeOutCirc'
-		sInitEvent			:'pageshow'
+		sInitEvent			  :'pageshow'
 
 In order to change any of this parameters, you will need just to add an object with the new values in the initialization call at the bottom of the widget code. For example:
 

@@ -6,6 +6,7 @@
 .list{ padding: 0 0 0 1.5em;}
 p{ margin: 0 0 1em;}
 
+/*  This is hardcoded right now */
 .carousel .slide { height: 330px; }
 .carousel-demo .ft{ text-align: center;}
 

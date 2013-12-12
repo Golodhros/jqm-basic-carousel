@@ -14,41 +14,37 @@
 
 	<div data-role="page" id="progress" data-theme="c">
 		<div data-role="header" data-theme="a">
-			<h1>Basic Carousel</h1>
+			<a href="#" data-icon="arrow-l" data-rel="back" data-iconpos="notext" data-theme="a">Back</a>
+			<h1>With Images</h1>
 		</div>
 		<div id="content" class="main-content" data-role="content">
-			<div class="mod demo-index">
-				<div class="demo-index-hd">
-					<ul data-role="listview" data-inset="true">
-					    <li data-role="list-divider" data-theme="a">Features</li>
-					    <li>
-					        <h2>Lightweight</h2>
-					        <p><strong>7Kb total</strong>, Little dependencies</p>
-					    </li>
-					    <li>
-					        <h2>Easy to try</h2>
-					        <p>Widget architecture, just plug it and work!</p>
-					    </li>
-					    <li>
-					        <h2>Clean Coded</h2>
-					        <p>Extend it or get rid of features easily</p>
-					    </li>
-					    <li>
-					        <h2>Configurable</h2>
-					        <p>Configure your transition effect, transition speed, autoplay interval</p>
-					    </li>
-					</ul>
-				</div>
-				<div class="demo-index-bd">
-					<ul data-role="listview" data-inset="true" class="ui-icon-alt">
-					    <li><a href="images-demo.html">Example with images</a></li>
-					    <li><a href="mixed-demo.html">Example with mixed content</a></li>
-					</ul>
-				</div>
-				<div class="demo-index-ft">
-					<div data-role="collapsible" data-theme="a" data-content-theme="a">
-					    <h2>Credits</h2>
-				        <p><a class="link" href="http://www.marcosiglesias.es" title="Check more info about me">Marcos Iglesias</a></p>
+			<div class="mod carousel-demo">
+				<div class="inner">
+					<div class="bd">
+						<div class="carousel-wrapper" data-role="carousel">
+							<div class="carousel">
+								<div class="slide slide-0">
+									<div class="slide-container clearfix">
+										<img src="http://behance.vo.llnwd.net/profiles2/138316/projects/7673825/9c880ddbda4cb53199699b430fd53e76.jpg" />
+									</div>
+								</div>
+								<div class="slide slide-1">
+									<div class="slide-container clearfix">
+										<img class="wd-img" src="http://behance.vo.llnwd.net/profiles2/138316/projects/7673825/723ee22bf36526586c0fc912c28a40a9.jpg" />
+									</div>
+								</div>
+								<div class="slide slide-2">
+									<div class="slide-container clearfix media">
+										<img src="http://behance.vo.llnwd.net/profiles2/138316/projects/7673825/b2f6198d6d33fb45988f27e38a36d264.jpg" />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="ft">
+						<nav class="carousel-position">
+							<span class="position"><em class="on">•</em><em>•</em><em>•</em></span>
+						</nav>
 					</div>
 				</div>
 			</div>
