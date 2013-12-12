@@ -18,3 +18,25 @@ p{ margin: 0 0 1em;}
 .img img {display: block; width: 100%;}
 .body .link,
 .body .link:visited {color: #45bf28;}
+
+/*  Initial loading screen */
+.initHandler:before {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    height: 100%;
+    z-index: 999999;
+    background-color: white; content: "Initializing...";
+    text-align: center;
+    color: #ccc;
+    text-shadow: none;
+    line-height: 150px;
+    vertical-align: bottom;
+    display: none\0;
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-size: 2em;
+}

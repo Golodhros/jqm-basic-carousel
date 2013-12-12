@@ -6,11 +6,11 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
 	<link rel="stylesheet" href="../css/jqm-carousel.css" />
 	<link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
+<body class="initHandler">
 
 	<div data-role="page" id="progress" data-theme="c">
 		<div data-role="header" data-theme="a">
@@ -78,11 +78,16 @@
 	<!-- Dependency -->
 	<script src="../jquery.easing.js"></script>
 
-	<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
 	<!-- Offline Fallback -->
 	<script type="text/javascript">if (typeof $.mobile === 'undefined') { document.write(unescape("%3Cscript src='js/jquery.mobile-1.3.1.min.js' type='text/javascript'%3E%3C/script%3E")); }</script>
 
 	<!-- Set As jQuery Mobile Auto Initialized Widget -->
 	<script src="../jqm-carousel-widget.js"></script>
+	<script>
+		$(document).on('pageshow', function(){
+			$('body').removeClass('initHandler')
+		});
+	</script>
 </body>
 </html>
