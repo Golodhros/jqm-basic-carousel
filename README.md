@@ -1,4 +1,4 @@
-# jQuery Mobile Basic Carousel
+# jQuery Mobile Basic Carousel Widget
 
 <strong>Simple</strong> and <strong>Lightweight</strong> carousel widget for jQuery Mobile applications. It can be used as an <strong>image slider</strong> or as a <strong>page carousel</strong> wrapping all kind of content.
 
