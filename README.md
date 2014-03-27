@@ -2,7 +2,7 @@
 
 <strong>Simple</strong> and <strong>Lightweight</strong> carousel widget for jQuery Mobile applications. It can be used as an <strong>image slider</strong> or as a <strong>page carousel</strong> wrapping all kind of content.
 
-Check the <a href="http://www.marcosiglesias.com/demo/" title="jQuery Mobile Basic Carousel Demo Page">Demo Page</a>.
+Check the <a href="http://www.marcosiglesias.com/demos/carousel/" title="jQuery Mobile Basic Carousel Demo Page">Demo Page</a>.
 
 ### Features
 - <strong>Lightweight (7Kb total)</strong>
